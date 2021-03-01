@@ -19,6 +19,10 @@ webhooks:
       namespace: {{ .Release.Namespace }}
       path: /mutate-actions-summerwind-dev-v1alpha1-runner
   failurePolicy: Fail
+  {{- if semverCompare ">=1.16-0" .Capabilities.KubeVersion.GitVersion -}}
+  sideEffects: None                                                                                                                                                                    ││                                                                                                                                                                                  │
+  admissionReviewVersions: ["v1beta1"]
+  {{- end }}
   name: mutate.runner.actions.summerwind.dev
   rules:
   - apiGroups:
@@ -37,6 +41,10 @@ webhooks:
       namespace: {{ .Release.Namespace }}
       path: /mutate-actions-summerwind-dev-v1alpha1-runnerdeployment
   failurePolicy: Fail
+  {{- if semverCompare ">=1.16-0" .Capabilities.KubeVersion.GitVersion -}}
+  sideEffects: None                                                                                                                                                                    ││                                                                                                                                                                                  │
+  admissionReviewVersions: ["v1beta1"]
+  {{- end }}
   name: mutate.runnerdeployment.actions.summerwind.dev
   rules:
   - apiGroups:
@@ -55,6 +63,10 @@ webhooks:
       namespace: {{ .Release.Namespace }}
       path: /mutate-actions-summerwind-dev-v1alpha1-runnerreplicaset
   failurePolicy: Fail
+  {{- if semverCompare ">=1.16-0" .Capabilities.KubeVersion.GitVersion -}}
+  sideEffects: None                                                                                                                                                                    ││                                                                                                                                                                                  │
+  admissionReviewVersions: ["v1beta1"]
+  {{- end }}
   name: mutate.runnerreplicaset.actions.summerwind.dev
   rules:
   - apiGroups:
@@ -87,6 +99,10 @@ webhooks:
       namespace: {{ .Release.Namespace }}
       path: /validate-actions-summerwind-dev-v1alpha1-runner
   failurePolicy: Fail
+  {{- if semverCompare ">=1.16-0" .Capabilities.KubeVersion.GitVersion -}}
+  sideEffects: None                                                                                                                                                                    ││                                                                                                                                                                                  │
+  admissionReviewVersions: ["v1beta1"]
+  {{- end }}
   name: validate.runner.actions.summerwind.dev
   rules:
   - apiGroups:
@@ -105,6 +121,10 @@ webhooks:
       namespace: {{ .Release.Namespace }}
       path: /validate-actions-summerwind-dev-v1alpha1-runnerdeployment
   failurePolicy: Fail
+  {{- if semverCompare ">=1.16-0" .Capabilities.KubeVersion.GitVersion -}}
+  sideEffects: None                                                                                                                                                                    ││                                                                                                                                                                                  │
+  admissionReviewVersions: ["v1beta1"]
+  {{- end }}
   name: validate.runnerdeployment.actions.summerwind.dev
   rules:
   - apiGroups:
@@ -123,6 +143,10 @@ webhooks:
       namespace: {{ .Release.Namespace }}
       path: /validate-actions-summerwind-dev-v1alpha1-runnerreplicaset
   failurePolicy: Fail
+  {{- if semverCompare ">=1.16-0" .Capabilities.KubeVersion.GitVersion -}}
+  sideEffects: None                                                                                                                                                                    ││                                                                                                                                                                                  │
+  admissionReviewVersions: ["v1beta1"]
+  {{- end }}
   name: validate.runnerreplicaset.actions.summerwind.dev
   rules:
   - apiGroups:
